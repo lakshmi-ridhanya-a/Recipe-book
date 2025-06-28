@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Book</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Recipe Book</h1>
+    <button id="openForm">Add Recipe</button>
+  </header>
+
+  <section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search recipes..." />
+  </section>
+
+  <main id="recipesContainer"></main>
+
+  <!-- Add Recipe Modal -->
+  <div id="recipeFormModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <form id="recipeForm">
+        <h2>Add a New Recipe</h2>
+        <input type="text" id="recipeName" placeholder="Recipe Name" required />
+        <textarea id="ingredients" placeholder="Ingredients (comma-separated)" required></textarea>
+        <textarea id="steps" placeholder="Preparation Steps" required></textarea>
+        <label for="recipeImage" class="custom-label">Upload Photo</label>
+        <input type="file" id="recipeImage" accept="image/*" required />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Recipe Details Modal -->
+  <div id="recipeDetailModal" class="modal">
+    <div class="modal-content" id="recipeDetailContent">
+      <span class="close-detail">&times;</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
