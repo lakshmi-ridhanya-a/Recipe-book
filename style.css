@@ -5,7 +5,7 @@ html {
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #e0f7f4;
+  background-color: #e6f8f6; /* soft pastel bluish-green */
   color: #333;
 }
 
@@ -14,8 +14,8 @@ body.modal-open {
 }
 
 header {
-  background-color: #b2dfdb;
-  color: #004d40;
+  background-color: #a0ded9;
+  color: #003c3c;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -31,7 +31,7 @@ header h1 {
 
 header button {
   padding: 0.5rem 1rem;
-  background-color: #00796b;
+  background-color: #009688;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -40,7 +40,7 @@ header button {
 }
 
 header button:hover {
-  background-color: #00695c;
+  background-color: #00796b;
 }
 
 .search-section {
@@ -58,27 +58,36 @@ header button:hover {
 
 #recipesContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-  padding: 1rem 2rem;
+  grid-template-columns: repeat(4, 1fr); /* exactly 4 columns */
+  gap: 2rem;
+  padding: 2rem;
   overflow-y: auto;
   max-height: calc(100vh - 250px);
   scroll-behavior: smooth;
+  justify-items: center;
 }
 
+
 .recipe-card {
+  width: 100%;
+  max-width: 400px;
+  height: 250px; /* fixed height */
   background-color: white;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
+
+
 .recipe-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .recipe-card img {
@@ -88,7 +97,7 @@ header button:hover {
 }
 
 .recipe-card h3 {
-  margin: 0.5rem 0;
+  margin: 0.8rem 0;
   color: #00695c;
   font-size: 1.2rem;
 }
@@ -125,6 +134,8 @@ header button:hover {
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   animation: popUp 0.3s ease;
+  overflow-y: auto;
+  max-height: 90vh;
 }
 
 @keyframes popUp {
@@ -132,7 +143,8 @@ header button:hover {
   100% { opacity: 1; transform: scale(1); }
 }
 
-.close-button, .close-detail {
+.close-button,
+.close-detail {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -144,11 +156,16 @@ header button:hover {
 .modal-content input,
 .modal-content textarea {
   width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.6rem;
+  margin: 0.6rem 0;
+  padding: 0.7rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   font-size: 1rem;
+}
+
+.modal-content textarea {
+  height: 100px;
+  resize: vertical;
 }
 
 .modal-content button {
@@ -160,10 +177,11 @@ header button:hover {
   border-radius: 0.5rem;
   font-size: 1rem;
   margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .modal-content button:hover {
-  background-color: #00695c;
+  background-color: #004d40;
 }
 
 input[type="file"] {
@@ -174,7 +192,7 @@ input[type="file"] {
   display: inline-block;
   margin: 10px 0;
   padding: 0.6rem 1rem;
-  background-color: #00796b;
+  background-color: #009688;
   color: #fff;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -186,6 +204,7 @@ input[type="file"] {
 .custom-label:hover {
   background-color: #00695c;
 }
+
 #backToMain {
   display: block;
   margin: 2rem auto 0;
@@ -201,4 +220,29 @@ input[type="file"] {
 
 #backToMain:hover {
   background-color: #004d40;
+}
+
+/* Detail View Enhancements */
+#recipeDetail h2 {
+  color: #004d40;
+}
+
+#recipeDetail ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+#recipeDetail ul li {
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  max-height: 300px; /* Optional: limits too-tall images */
+  display: block;
 }
