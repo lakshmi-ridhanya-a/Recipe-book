@@ -40,7 +40,7 @@ The goal of this project is to create a dynamic, responsive recipe book that pro
 - Recipes persist even after refreshing or closing the browser.
 
 ###  Design
-- **Pastel bluish-green** theme for a modern, minimal look.
+- The color theme uses warm beige, white, soft blue, and dark gray for a clean and professional look.
 - Fully responsive layout across devices.
 - Custom styling for the upload photo button.
 - Smooth transitions and scroll behavior.
@@ -95,6 +95,9 @@ Recipe-book/
 3. "Add Recipe" button opens a form modal to input new recipes.
 4. Recipes are stored locally and dynamically rendered to the UI.
 5. Search field filters recipes live by name or ingredients.
+
+![image](https://github.com/user-attachments/assets/f54d0ee1-30dc-4473-81a2-1357011c44fe)
+
 
 ---
 
